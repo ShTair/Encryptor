@@ -31,7 +31,8 @@ namespace Encryptor
 
             foreach (var file in files)
             {
-                zip.Add(file);
+                var entry = Path.GetFileName(file);
+                zip.Add(file, entry);
             }
 
             zip.CommitUpdate();
